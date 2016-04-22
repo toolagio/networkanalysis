@@ -1,0 +1,483 @@
+id,Author name,Department
+12055,James Nathan,
+aa461,Seyed Amin Al Olama,
+aas41,Ashwin Seshia,
+ab149,Andrew Bannister,
+ab454,Andreas Bender,
+abj26,Asta Jonsdottir,
+aca20,Antonis Antoniou,
+acl34,Ann Lindon,
+ad596,Alice Denton,
+ag229,Anna Git,
+agl22,Andrew Lynch,
+ah832,Alexandria Haslehurst,
+ahg13,Andrew Gee,
+ajk61,Alexandre Kabla,
+ajw1000,Alan Warren,
+al499,Alastair Lamb,
+am2185,Athena Matakidou,
+amd24,Alison Dunning,
+amd3,Athene Donald,
+amr75,Aisling Redmond,
+ap113,Anna Philpott,
+apd10,Anthony Davenport,
+apj10,Antony Jackson,
+arf25,Alan Fersht,
+arg1000,Anthony Green,
+arv22,Ashok Venkitaraman,
+as889,Ana Cvejic,
+bb313,Bristi Basu,
+bds10,Benjamin Simons,
+bg200,Berthold Gottgens,
+bjph2,Brian Huntly,
+bkk25,Bonkyoung Koo,
+ca26,Christopher Abell,
+cattc107,Peter Campbell,
+cattc110,John Bradley,
+cbs31,Carola-Bibiane Schoenlieb,
+cc234,Carlos Caldas,
+cem45,Charles Massie,
+cer51,Christopher Rudd,
+cf366,Christian Frezza,
+cfk23,Clemens Kaminski,
+cg348,Cedric Ghevaert,
+cjf1004,Christine Farr,
+cjw53,Christine Watson,
+cm666,Carla Pedro Martins,
+cs681,Christine Schmidt,
+cs698,Carl Spickett,
+cw209,Colin Watts,
+den22,David Neal,
+den25,David Nelson,
+dfe20,Douglas Easton,
+dgk23,David Kent,
+dhr25,David Rowitch,
+dij21,Duncan Jodrell,
+djh210,David Huggins,
+djl15,David Lomas,
+dk10012,David Klenerman,
+dmg25,David Glover,
+do202,Darerca Owen,
+do261,Duncan Odom,
+drs20,David Sargan,
+drs36,David Spring,
+ds139,Robert St Johnston,
+dscj1,David Charnock-Jones,
+dtf1000,Douglas Fearon,
+eam29,Eric Miska,
+edl1,Ernest Laue,
+ejb60,Elizabeth Baxter,
+el422,Elisa Laurenti,
+elr21,Emma Rawlins,
+ep370,Eugenia Piddini,
+epm27,Elizabeth Murchison,
+erc24,Edwin Chilvers,
+erm1000,Eamonn Maher,
+ew442,Edward Wilson,
+fag1000,Ferdia Gallagher,
+fia20,Franklin Aigbirhio,
+fjg28,Fiona Gilbert,
+fjl1,Finian Leeper,
+fm319,Frank McCaughan,
+fm327,Florian Markowetz,
+fmw22,Fiona Walter,
+fo210,Feride Oeztuerk-Winder,
+fr269,Frances Richards,
+fvg20,Fanni Gergely,
+gcb3,Guy Brown,
+gie20,Gerard Evan,
+gjh46,Gregory Hannon,
+gl290,Georgios Lyratzopoulos,
+gm263,Gos Micklem,
+gm290,Gillian Murphy,
+gmt11,Graham Treece,
+gsv20,George Vassiliou,
+hcm29,Helen Morris,
+hl316,Heike Laman,
+hme22,Helena Earl,
+hrm28,Helen Mott,
+hs310,Honglin Song,
+hwv20,Hendrik Van Veen,
+ijg25,Ian Groves,
+ip100,Ian Paterson,
+ir279,Ingo Ringshausen,
+irb21,Ian Baxendale,
+ja219,Julie Ahringer,
+ja344,Jean Abraham,
+jada2,John Aston,
+jau20,Juliet Usher-Smith,
+jc553,Jason Carroll,
+jdb1003,James Brenton,
+jf416,Jasmin Fisher,
+jg473,Jochen Guck,
+jg477,John Griffiths,
+jg671,Javier Garcia Corbacho,
+jgd29,Joseph Dennis,
+jhfr2,James Rudd,
+jhg21,Jonathan Gillard,
+jis30,Jonathan Sive,
+jjb12,Jeremy Baumberg,
+jlg38,Jennifer Gallop,
+jlg40,Julian Griffin,
+jmd1000,Jane Dobson,
+jp103,Jonathon Pines,
+js970,Jacqueline Shields,
+jt233,John Trowsdale,
+jvf21,Josep Forment,
+kbk21,Karoline Kuchenbaecker,
+kbm1000,Kerstin Meyer,
+kc370,Kevin Chalut,
+kdh29,Karen Howarth,
+kh387,Katherine Hughes,
+kk101,Kay-Tee Khaw,
+kk429,Kristina Kirschner,
+kmb1001,Kevin Brindle,
+ko268,Katrin Ottersbach,
+ksl23,Kathryn Lilley,
+lp212,Luca Pellegrini,
+lp392,Luca Pellegrinet,
+lsi10,Laura Itzhaki,
+lv225,Ludovic Vallier,
+ma630,Margaret Ashcroft,
+mac54,Michael Chapman,
+mad58,Marc de la Roche,
+mag62,Mae Goldgraben,
+map1001,Michael Parker,
+mas1001,Margaret Stanley,
+mcf22,Morag Farquhar,
+md458,Michael Dyson,
+mdt33,Marc Tischkowitz,
+mew10,Mark Welland,
+mf364,Michaela Frye,
+mja1000,Matthew Allen,
+mjg40,Martin Graves,
+mjm16,Matthew Murray,
+mjm39,Michael Mason,
+mlo29,Michelle Oyen,
+mmo25,Myriam Ouberai,
+mn332,Masashi Narita,
+mpa28,Maria Alcolea,
+mpfs1,Michael Sutcliffe,
+mps48,Michael Simmons,
+mpw1001,Michael Weekes,
+mqd20,Ming-Qing Du,
+ms433,Marisa Segal,
+naw27,Nicholas Walton,
+nc109,Nicholas Coleman,
+ngb21,Neil Burnet,
+njw1004,Nicholas Wareham,
+nms39,Nicole Sodir,
+nr343,Nitzan Rosenfeld,
+ns421,Nicholas Shannon,
+ns627,Nuria Segui Gracia,
+oas23,Oren Scherman,
+pak29,Peter Kreuzaler,
+pal34,Paul Lyons,
+pawe1,Paul Edwards,
+paz20,Philip Zegerman,
+pc245,Pietro Cicuta,
+pg336,Peter Goon,
+phj20,Philip Jones,
+phm29,Patrick Maxwell,
+pjb91,Peter Bond,
+pjl30,Paul Lehner,
+pl219,Pietro Lio,
+pp10001,Paul Pharoah,
+ppd21,Pier D'Avino,
+qg209,Qi Guo,
+ralp2,Roger Pedersen,
+rb468,Robert Busch,
+rcf29,Rebecca Fitzgerald,
+rd439,Ronan Daly,
+rdb39,Richard Baird,
+rec11,Ruth Cameron,
+reg53,Raymond Goldstein,
+rjg74,Richard Gilbertson,
+rk385,Ragnhildur Karadottir,
+rmm32,Rebecca Myers,
+rns13,Richard Sandford,
+rsj33,Randall Johnson,
+sa263,Shubha Anand,
+sb10031,Shankar Balasubramanian,
+sb674,Sandra Blanco Benavente,
+sc10021,Suet Chin,
+scp46,Simon Pacey,
+sd642,Siddharth De,
+sdt36,Suzanne Turner,
+seb53,Sarah Bohndiek,
+sjb32,Sarah Bray,
+sjg49,Simon Griffin,
+sjp58,Stephen Price,
+sk10023,Sylvia Kocialkowski,
+sp577,Sara Piccirillo,
+sp580,Sara Pensa,
+spj13,Stephen Jackson,
+sr504,Suzanne Randle,
+sr679,Steffen Rulands,
+srb39,Sally Boss,
+ss861,Shamith Samarajiwa,
+ssl30,Siong-Seng Liau,
+st321,Simon Tavare,
+svl1000,Steven Ley,
+sw644,Simone Weyand,
+tb507,Tristan Barrett,
+tdf21,Timothy Fryer,
+tdl2,Trevor Littlewood,
+tfm23,Tarik Massoud,
+tgqe2,Timothy Eisen,
+timm2,Timothy Malcolm,
+tj212,Tobias Janowitz,
+tk106,Tony Kouzarides,
+tk218,Torsten Krude,
+tl347,Timothy Larkin,
+tlb20,Tom Blundell,
+tm418,Tomasz Matys,
+to237,Takashi Ochi,
+ufk20,Ulrich Keyser,
+vjg29,Vincent Gnanapragasam,
+vmd20,Viji Draviam Sastry,
+wtk22,Walid Khaled,
+x_b03,Wolf Reik,
+yjl26,Yingjun Liu,
+yk299,Yuu Kimata,
+yysh2,Yanyan Huang,
+admn2016,"HAMILTON, Andrew D",Chemistry
+anat0115,"WILSON, Clive",Physiology Anatomy and Genetics
+anat0116,"GOBERDHAN, Deborah",Physiology Anatomy and Genetics
+awatts,"WATTS, Anthony",Biochemistry
+bioc0055,"COX, Lynne S",Biochemistry
+bioc0128,"MELLOR, Elizabeth JC (Jane)",Biochemistry
+bioc0188,"LAKIN, Nicholas D",Biochemistry
+bioc0192,"ROBSON, Matthew D",RDM
+bioc0208,"ZITZMANN, Nicole",Biochemistry
+bioc0212,"TYLER, Damian J",Physiology Anatomy and Genetics
+bioc0268,"BUTTERS, Terry",Biochemistry
+bioc0365,"WOOLLARD, Alison CS",Biochemistry
+bioc0400,"WHITBY, Matthew C",Biochemistry
+bioc0416,"SIBSON, Nicola R",Oncology
+bioc0541,"ANTHONY, Daniel CC",Pharmacology
+bioc0647,"NASMYTH, Kim A",Biochemistry
+bioc0673,"VAKONAKIS, Ioannis (John)",Biochemistry
+bioc0756,"HOWARTH, Mark R",Biochemistry
+bioc0764,"NOVAK, Bela",Biochemistry
+bioc0801,"KLOSE, Robert J (Rob)",Biochemistry
+bioc0804,"BROCKDORFF, Neil",Biochemistry
+bioc0929,"COHN, Martin A",Biochemistry
+bioc0987,"NEWSTEAD, Simon L",Biochemistry
+bioc1078,"BARR, Francis A",Biochemistry
+bras2068,"WARREN, Daniel R",Oncology
+card0008,"BHATTACHARYA, Shoumo",RDM
+card0018,"NEUBAUER, Stefan",RDM
+card0025,"CHANNON, Keith M",RDM
+card0027,"WATKINS, Hugh C",RDM
+card0039,"CHOUDHURY, Robin",RDM
+chem0068,"GOUVERNEUR, Veronique",Chemistry
+chem0372,"BURTON, Jonathan W",Chemistry
+chem0489,"CONWAY, Stuart J",Chemistry
+chri0963,"SWIETACH, Pawel",Physiology Anatomy and Genetics
+clab0018,"GATTER, Kevin C",RDM
+clab0025,"BANHAM, Alison H",RDM
+clab0035,"BOULTWOOD, Jacqueline",RDM
+clab0058,"MURPHY, Michael F",Surgical Sciences
+clab0101,"PELLAGATTI, Andrea",RDM
+clab0127,"LA THANGUE, Nicholas B (Nick)",Oncology
+clab0247,"RABBITTS, Terence H (Terry)",RDM
+clar0089,"LEAKE, Mark C",Biochemistry
+clar0270,"KAPANIDIS, Achillefs",Physics
+clar0295,"PEACH, Kenneth J (Ken)",Physics
+claridge,"CLARIDGE, Timothy DW (Tim)",Chemistry
+clme0135,"PEZZELLA, Francesco",RDM
+clme0149,"KLENERMAN, Paul",NDM
+clme0169,"ALTMAN, Douglas G",NDORMS
+clme0193,"JACKSON, David G",RDM
+clme0195,"HIGGS, Douglas R",RDM
+clme0219,"OGG, Graham",RDM
+clme0220,"HARRIS, Adrian",Oncology
+clme0237,"TAYLOR, Jenny C",NDM
+clme0240,"PUGH, Christopher W (Chris)",NDM
+clme0301,"THAKKER, Rajesh V",RDM
+clme0439,"SIEBOLD, Christian",NDM
+clme0485,"OPPERMANN, Udo CT",NDORMS
+clme0494,"GILEADI, Opher",NDM
+clme0497,"KNAPP, Stefan",NDM
+clme0501,"TURNEY, Benjamin W (Ben)",Surgical Sciences
+clme0621,"BUCHAN, Alastair M",Medical Sciences Division
+clme0667,"MCKENNA, William G (Gillies)",Oncology
+clme0670,"MUSCHEL, Ruth J",Oncology
+clme0731,"BEVERLEY, Peter C",NDM
+clme0832,"COLLINS, Gary S",NDORMS
+clme0845,"GREEN, Jane M",Nuffield Department of Population Health
+clme0946,"LU, Xin",NDM
+clme0975,"MIDDLETON, Mark R",Oncology
+clme0993,"BOND, Gareth",NDM
+clme1037,"BOUNTRA, Charanjit (Chas)",NDM
+clme1136,"CHRISTIANSON, John C",NDM
+clme1358,"BRENNAN, Paul E",NDM
+clme1544,"EGGELING, Christian (Eggeling)",RDM
+clme1651,"BIRD-LIEBERMAN, Elizabeth L",Experimental Medicine
+clne0009,"ROTHWELL, Peter M",Clinical Neurosciences
+clne0013,"SMITH, Stephen",Clinical Neurosciences
+clne0024,"JEZZARD, Peter",Clinical Neurosciences
+clne0083,"ANSORGE, Olaf",Clinical Neurosciences
+clne0102,"JENKINSON, Mark",Clinical Neurosciences
+clph0059,"SEYMOUR, Leonard W",Oncology
+coml0058,"JEAVONS, Peter G",Computer Science
+coml0080,"DAVIES, James W (Jim)",Computer Science
+coml0332,"BYRNE, Helen M",Mathematical Institute
+corp0784,"ARICESCU, Alexandru R (Radu)",NDM
+cschof,"SCHOFIELD, Christopher J (Chris)",Chemistry
+ctsu0052,"LANDRAY, Martin J",Nuffield Department of Population Health
+ctsu0084,"CHEN, Zheng-Ming (Zhengming)",Nuffield Department of Population Health
+ctsu0165,"BAIGENT, Colin N",Nuffield Department of Population Health
+ctsu0265,"CUTTER, David J",Nuffield Department of Population Health
+ctsu0385,"GNATIUC, Louisa",Nuffield Department of Population Health
+darby,"DARBY, Sarah C",Nuffield Department of Population Health
+donc0108,"MUIRHEAD, Rebecca",Oncology
+donc0114,"RAMADAN, Kristijan",Oncology
+donc0120,"HAWKINS, Maria A",Oncology
+donc0136,"D'ANGIOLELLA, Vincenzo",Oncology
+donc0228,"VAN DEN HEUVEL, Frank",Oncology
+dops0137,"TOWNLEY, Helen E",Obstetrics & Gynaecology
+dpag0048,"SZELE, Francis G",Physiology Anatomy and Genetics
+dpag0074,"LIU, Ji-Long",Physiology Anatomy and Genetics
+dpag0225,"GOODWIN, Stephen F",Physiology Anatomy and Genetics
+dplb0149,"DAVIS, Benjamin G (Ben)",Chemistry
+eart0123,"HALLIDAY, Alexander N (Alex)",Earth Sciences
+engs0270,"TARASSENKO, Lionel",Engineering Science
+engs0357,"BRADY, John M (Michael)",Oncology
+engs0475,"COUSSIOS, Constantin C",Engineering Science
+engs0688,"FOX, John P",Engineering Science
+engs1258,"RITTSCHER, Jens",Engineering Science
+gree0184,"PETO, Richard",Nuffield Department of Population Health
+gree0989,"BERAL, Valerie",Nuffield Department of Population Health
+gree1024,"ALI, Raghib",Nuffield Department of Population Health
+gree1192,"KEY, Timothy J",Nuffield Department of Population Health
+gree1499,"CROWE, Francesca L",Nuffield Department of Population Health
+gree1620,"HIGGINS, Geoffrey",Oncology
+hert0418,"BODMER, Walter",Oncology
+immd0023,"CERUNDOLO, Vincenzo",RDM
+immd0024,"VYAS, Paresh",RDM
+immd0031,"LI, Demin",RDM
+immd0036,"WILKIE, Andrew OM",RDM
+immd0075,"HUGHES, James R",RDM
+immd0082,"BUCKLE, Veronica",RDM
+immd0084,"SIMON, Anna K (Katja)",NDM
+immd0100,"DONG, Tao",RDM
+immd0106,"DORRELL, Lucy",NDM
+immd0135,"FELLER, Stephan",Oncology
+immd0151,"KNIGHT, Samantha J (Sam)",NDM
+immd0180,"MACAULAY, Valentine",Oncology
+immd0198,"SIMMONS, Alison",NDM
+immd0218,"KOLLNBERGER, Simon D",Surgical Sciences
+immd0237,"RATCLIFFE, Peter J",NDM
+immd0282,"PATIENT, Roger K",RDM
+immd0316,"BUFFA, Francesca",Oncology
+immd0330,"SCHUH, Annette H (Anna)",Oncology
+immd0421,"CHURCH, David N",NDM
+immd0423,"HASSAN, Andrew B (Bass)",Pathology Dunn School
+immd0452,"ESASHI, Fumiko",Pathology Dunn School
+immd0499,"NIEDZWIEDZ, Wojciech",Oncology
+immd0556,"MEAD, Adam J",RDM
+immd0654,"MILNE, Thomas (Tom)",RDM
+immd0679,"FULGA, Tudor A",RDM
+immd0680,"SAUKA-SPENGLER, Tatjana",RDM
+immd0700,"NERLOV, Claus",RDM
+jrobert,"ROBERTSON, Jeremy",Chemistry
+kenn0019,"ITOH, Yoshifumi (Yoshi)",NDORMS
+kenn0163,"DUSTIN, Michael L (Mike)",NDORMS
+lina0435,"MCVEAN, Gilean AT (Gil)",NDM
+magd1571,"DONOHOE, Timothy J",Chemistry
+math0111,"MAINI, Philip K",Mathematical Institute
+mjawood,"WOOD, Matthew J",Physiology Anatomy and Genetics
+molb0002,"VAN DER MERWE, Philip A (Anton)",Pathology Dunn School
+molb0003,"KENNEDY, Stephen H",Obstetrics & Gynaecology
+ndog0115,"MORTEN, Karl",Obstetrics & Gynaecology
+ndog0251,"AHMED, Ahmed A",Obstetrics & Gynaecology
+ndog0268,"HELLNER, Karin",Obstetrics & Gynaecology
+ndos0097,"CRANSTON, David W",Surgical Sciences
+ndos0159,"TRIFFITT, James T",NDORMS
+ndos0168,"CARR, Andrew J (Andy)",NDORMS
+ndos0461,"HAMDY, Freddie C",Surgical Sciences
+ndos0532,"BRYANT, Richard J",Surgical Sciences
+ndos0723,"SOORIAKUMARAN, Prasanna S",Surgical Sciences
+newc0612,"RUSSELL, Angela J",Pharmacology
+ocms0037,"PONTING, Christopher (Chris)",Physiology Anatomy and Genetics
+ocms0064,"GILBERT, Robert JC",NDM
+olin0014,"GODING, Colin",NDM
+olin0027,"DE VAL, Sarah J",NDM
+olin0081,"GYRD-HANSEN, Mads",NDM
+olin0118,"NIJMAN, Sebastian",NDM
+orie1154,"FAIRCHILD, Paul J",Pathology Dunn School
+orms0061,"FELDMANN, Marc",NDORMS
+orms0071,"EDWARDS, Claire M",NDORMS
+oums0386,"WATT, Andrew AR",Materials
+path0002,"VAUX, David JT",Pathology Dunn School
+path0012,"PROUDFOOT, Nicholas J",Pathology Dunn School
+path0041,"HANDFORD, Penelope A (Penny)",Biochemistry
+path0063,"BROWN, Marion H",Pathology Dunn School
+path0084,"UHLIG, Hans H (Holm)",NDM
+path0089,"POWRIE, Fiona M",NDORMS
+path0107,"FURGER, Andre M",Biochemistry
+path0204,"NORBURY, Christopher J (Chris)",Pathology Dunn School
+path0473,"ACUTO, Oreste",Pathology Dunn School
+path0511,"JACOBSEN, Sten",RDM
+path0636,"RAFF, Jordan",Pathology Dunn School
+path0642,"DUSHEK, Omer",Pathology Dunn School
+path0811,"FREEMAN, Matthew JA",Pathology Dunn School
+path0873,"AHEL, Dragana",Pathology Dunn School
+phpc0009,"MURPHY, Michael F",Obstetrics & Gynaecology
+phpc0084,"MANT, David",Primary Care Health Sciences
+phpc0228,"WORDSWORTH, Sarah",Nuffield Department of Population Health
+phpc0367,"BUCHANAN, James R",Nuffield Department of Population Health
+phpc0577,"VALDERAS MARTINEZ, Jose M",Primary Care Health Sciences
+phys0101,"VAUGHAN-JONES, Richard D",Physiology Anatomy and Genetics
+phys0125,"GLITSCH, Maike D",Physiology Anatomy and Genetics
+phys0666,"SERYI, Andrei",Physics
+prhc0003,"HOBBS, Frederick DR (Richard)",Primary Care Health Sciences
+prhc0057,"NICHOLSON, Brian",Primary Care Health Sciences
+quee1607,"YAU, Christopher",NDM
+radi0003,"GLEESON, Fergus V",Oncology
+raob0005,"TARSOUNAS, Madalena",Oncology
+raob0009,"BARBER, Paul",Oncology
+raob0051,"VOJNOVIC, Borivoj (Boris)",Oncology
+raob0069,"VALLIS, Katherine A",Oncology
+raob0072,"SHARMA, Ricky A",Oncology
+raob0095,"CORNELISSEN, Bart",Oncology
+raob0096,"O'NEILL, Eric",Oncology
+raob0097,"HAMMOND, Ester M",Oncology
+raob0121,"DIANOV, Grigory",Oncology
+raob0122,"HUMPHREY, Timothy",Oncology
+raob0168,"JONES, Bleddyn",Oncology
+raob0182,"EBNER, Daniel V",NDM
+raob0189,"KILTIE, Anne E",Oncology
+raob0231,"MUKHERJEE, Somnath",Oncology
+raob0233,"RYAN, Anderson J",Oncology
+raob0270,"MAUGHAN, Timothy S (Tim)",Oncology
+robbins,"ROBBINS, Peter A",Physiology Anatomy and Genetics
+rwilkins,"WILKINS, Robert J",Physiology Anatomy and Genetics
+smlea,"LEA, Susan M",Pathology Dunn School
+stat0004,"DONNELLY, Peter J",Statistics
+stat0054,"HOLMES, Christopher C (Chris)",NDM
+stat0059,"BOWDEN, Rory J",NDM
+trin1371,"MAHADEVAN, Louis D",Biochemistry
+univ0247,"PEARS, Catherine J",Biochemistry
+univ1102,"CHAPPELL, Michael A",Engineering Science
+univ1923,"MCCULLAGH, James",Chemistry
+vacc0036,"KRIAUCIONIS, Skirmantas K",NDM
+wadh1179,"VOETS, Natalie",Clinical Neurosciences
+whgu0085,"RAGOUSSIS, Ioannis",NDM
+whgu0139,"COLEMAN, Mathew (Matthew)",NDM
+whgu0142,"BULLOCK, Alexander N (Alex)",NDM
+whgu0172,"KESSLER, Benedikt",NDM
+whgu0210,"MANCINI, Erika J",NDM
+whgu0256,"MOLE, David R",NDM
+whgu0274,"POLLARD, Patrick J",NDM
+whgu0378,"TOMLINSON, Ian",NDM
+whgu0385,"GRUNEWALD, Kay",NDM
+whgu0408,"LEEDHAM, Simon",NDM
+whgu0527,"CHAPMAN, J Ross",NDM
+wolf1833,"FLASHMAN, Emily G",Chemistry
+wolf1917,"MCHUGH, Peter",Oncology
+xxxx0009,"PARTRIDGE, Michael (Mike)",Oncology
+zool0768,"MAGIORKINIS, Gkikas",Zoology
+zool1114,"ABOOBAKER, Aziz",Zoology
