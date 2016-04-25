@@ -3,12 +3,13 @@ import re
 from io import BytesIO
 
 pubsFile = 'Publications_oxford-cambridge-CRUK_2011-03_2016.txt'
-#pubsFile = 'Publications_sample.txt'
 pubsFileClean = 'Publications_oxford-cambridge-CRUK_2011-03_2016-clean.txt'
+#pubsFile = 'Publications_Simple_From20110101_To20160331_CancerCentre_20160317.txt'
+#pubsFileClean = 'Publications_Simple_From20110101_To20160331_CancerCentre_20160317-clean.txt'
 
 crossInstitution = 1
-crossInstitutionOnly = 0
-removeDuplicates = 0
+crossInstitutionOnly = 1
+removeDuplicates = 1
 includeEdgeData = 1
 
 def remove_quotes(s):
@@ -92,7 +93,7 @@ with open(pubsFileClean, 'rb') as csvfile:
             if(newRecord['Username'] not in authors):
                 authors[newRecord['Username']] = {
                                                 'name': newRecord['Name'],
-                                                'institution': newRecord['Institution'],
+                                                'institution': newRecord['Institution'] if 'Institution' in newRecord else 'Oxford',
                                                 'department': newRecord['Primary group'],
                                                 }
 
@@ -160,6 +161,7 @@ with open(pubsFileClean, 'rb') as csvfile:
         for idx, coAuthors in enumerate(coAuthorships):
             # if desired, add edge data to csv output
             if includeEdgeData:
+                coAuthors = list(coAuthors)
                 coAuthors.append(coAuthorshipData[idx]['type'])
                 coAuthors.append(coAuthorshipData[idx]['publicationName'])
                 coAuthors.append(coAuthorshipData[idx]['title'])
