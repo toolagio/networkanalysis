@@ -1,16 +1,61 @@
 import unicodecsv as csv
+import collections
 import re
 from io import BytesIO
 
+# GROUPS OF SETTINGS FOR DIFFERENT ANALYSIS #
+
+'''
+# 1. inter-institutional... Oxford and Cambridge
+#filenames
 pubsFile = 'Publications_oxford-cambridge-CRUK_2011-03_2016.txt'
 pubsFileClean = 'Publications_oxford-cambridge-CRUK_2011-03_2016-clean.txt'
-#pubsFile = 'Publications_Simple_From20110101_To20160331_CancerCentre_20160317.txt'
-#pubsFileClean = 'Publications_Simple_From20110101_To20160331_CancerCentre_20160317-clean.txt'
-
+# organise outputs by institution and include institution in outputs
 crossInstitution = 1
-crossInstitutionOnly = 1
-removeDuplicates = 1
+# only show inter-institutional collaborations/coAuthorships
+crossInstitutionOnly = 0
+# whether to include edge/node meta data or not
 includeEdgeData = 1
+# if undirected, then only show each collaboration once, regardless of who reported it
+undirectedGraph = 1
+defaultInstitution = 'Oxford'
+filePrefix = "ox-cam"
+
+
+# 2. Oxford only
+#filenames
+pubsFile = 'Publications_Simple_From20110101_To20160331_CancerCentre_20160317.txt'
+pubsFileClean = 'Publications_Simple_From20110101_To20160331_CancerCentre_20160317-clean.txt'
+# organise outputs by institution and include institution in outputs
+crossInstitution = 0
+# only show inter-institutional collaborations/coAuthorships
+crossInstitutionOnly = 0
+# whether to include edge/node meta data or not
+includeEdgeData = 1
+# if undirected, then only show each collaboration once, regardless of who reported it
+undirectedGraph = 1
+defaultInstitution = 'Oxford'
+filePrefix = "ox-ox"
+'''
+
+
+# 3. Cambridge only
+#filenames
+pubsFile = 'Publications_cambridge-CRUK_2011-03_2016.txt'
+pubsFileClean = 'Publications_cambridge-CRUK_2011-03_2016-clean.txt'
+# organise outputs by institution and include institution in outputs
+crossInstitution = 0
+# only show inter-institutional collaborations/coAuthorships
+crossInstitutionOnly = 0
+# whether to include edge/node meta data or not
+includeEdgeData = 1
+# if undirected, then only show each collaboration once, regardless of who reported it
+undirectedGraph = 1
+defaultInstitution = 'Cambridge'
+filePrefix = "cam-cam"
+
+# END OF SETTINGS #
+
 
 def remove_quotes(s):
     return ''.join(c for c in s if c not in ('"','\n','\r'))
@@ -25,8 +70,8 @@ def combinantorial(lst):
         index += 1
     return pairs
 
-with open(pubsFile,"rb") as infile, open(pubsFileClean,"wb") as outfile:
-    c = infile.read().decode('utf-16le').encode('utf-8')
+with open(pubsFile,"rU") as infile, open(pubsFileClean,"wb") as outfile:
+    c = infile.read()
     reader = csv.reader((line.replace('\0','') for line in BytesIO(c)), delimiter='	', quotechar='"')
     writer = csv.writer(outfile)
     for line in reader:
@@ -37,6 +82,7 @@ with open(pubsFileClean, 'rb') as csvfile:
 
     pubMarkers = ['Proprietary ID', 'DOI', 'Author URL', 'ID']
     publications = {}
+    keyWords = {'Oxford': [], 'Cambridge': []}
     authorColumns = []
     authors = {}
 
@@ -45,7 +91,8 @@ with open(pubsFileClean, 'rb') as csvfile:
         publications[variable] = {}
 
     isHeader = 1
-    # loop through all entries in the source publication file
+    # loop through all entries in the source publication file to create publication
+    #   records organised by as many unique identifiers as the data contains
     for row in reader:
         if isHeader:
             isHeader = 0
@@ -64,7 +111,7 @@ with open(pubsFileClean, 'rb') as csvfile:
             #   'Author URL',
             #   'ID' (ID for inter Oxford connections only)
             for variable in pubMarkers:
-                if(len(newRecord[variable])):
+                if(variable in newRecord and len(newRecord[variable])):
                     # if first encounter of this publication, initialise variables
                     if(newRecord[variable] not in publications[variable]):
                         publications[variable][newRecord[variable]] = {'authorIDs': [], 'coauthors': [], 'keywords': [], 'title': '', 'type': '', 'publicationName': ''}
@@ -80,6 +127,10 @@ with open(pubsFileClean, 'rb') as csvfile:
                     for word in re.split(', |; |,|;', newRecord['Keywords']):
                         if len(word.strip()) and word.strip() not in publications[variable][newRecord[variable]]['keywords']:
                             publications[variable][newRecord[variable]]['keywords'].append(word.strip())
+                            if crossInstitution and 'Institution' in newRecord:
+                                keyWords[newRecord['Institution']].append(word.strip())
+                            else:
+                                keyWords[defaultInstitution].append(word.strip())
                     # record title
                     publications[variable][newRecord[variable]]['title'] = newRecord['Title']
                     # record publication type
@@ -88,27 +139,32 @@ with open(pubsFileClean, 'rb') as csvfile:
                     publications[variable][newRecord[variable]]['publicationName'] = newRecord['Journal OR Proceedings']
                     if len(newRecord['Canonical journal title']):
                         publications[variable][newRecord[variable]]['publicationName'] = newRecord['Canonical journal title']
+                    # add marker values for comparisons of duplicates below
+                    for compareVar in pubMarkers:
+                        if compareVar in newRecord:
+                            publications[variable][newRecord[variable]][compareVar] = newRecord[compareVar]
 
             # store author/node data
-            if(newRecord['Username'] not in authors):
+            if 'Username' in newRecord and newRecord['Username'] not in authors:
                 authors[newRecord['Username']] = {
                                                 'name': newRecord['Name'],
-                                                'institution': newRecord['Institution'] if 'Institution' in newRecord else 'Oxford',
+                                                'institution': newRecord['Institution'] if 'Institution' in newRecord else defaultInstitution,
                                                 'department': newRecord['Primary group'],
                                                 }
 
     # open output csv file
-    with open("author-edges.csv", "wb") as f:
+    with open(filePrefix+"-edges.csv", "wb") as f:
         writer = csv.writer(f)
         # create list of all found co-authorship records
         coAuthorships = []
         coAuthorshipData = []
         compareType = ['ID']
         edgeList = {}
+        foundPubs = {}
         # if cross-institution, compare external IDs to determine links
         if crossInstitution:
             compareType = ['Proprietary ID', 'DOI']
-        # loop through each compare type
+        # loop through each dictionary sorted by publication unique identifier and extract coAuthorship pairings
         for thisType in compareType:
             # loop through all publications of the current compare type
             for pub in publications[thisType]:
@@ -118,24 +174,34 @@ with open(pubsFileClean, 'rb') as csvfile:
                     for pairing in combinantorial(publications[thisType][pub]['authorIDs']):
                         coAuthorshipIncluded = 0
                         thisPair = pairing
+                        # check if pairing is already accounted for with this publication
+                        checkString = pairing[0]+"-"+pairing[1]+"-"+pub
+                        if undirectedGraph and checkString in foundPubs:
+                            print "record already found: "+pub
+                            break
                         # if within one institution, consider each pairing a collaboration
                         if not crossInstitution:
-                            if not removeDuplicates or pairing not in coAuthorships:
-                                coAuthorships.append(pairing)
-                                coAuthorshipIncluded = 1
+                            coAuthorships.append(pairing)
+                            coAuthorshipIncluded = 1
                         else:
                             # if only interested in cross institution edges, ensure both institutions are represented
                             insts = [pairing[0].split('-')[0], pairing[1].split('-')[0]]
                             # TODO: remove hard coded institution references
                             if(not crossInstitutionOnly or ('Oxford' in insts and 'Cambridge' in insts)):
                                 thisPair = [pairing[0].split('-')[1], pairing[1].split('-')[1]]
-                                if not removeDuplicates or thisPair not in coAuthorships:
-                                    coAuthorships.append(thisPair)
-                                    coAuthorshipIncluded = 1
+                                coAuthorships.append(thisPair)
+                                coAuthorshipIncluded = 1
                         # if found, add edge data for selected coAuthorship
                         if coAuthorshipIncluded:
+                            # add co-authorship to list of known pub pairings
+                            for knownType in compareType:
+                                if knownType not in foundPubs:
+                                    foundPubs[knownType] = {}
+                                foundPubs[knownType][thisPair[0]+"-"+thisPair[1]+"-"+publications[thisType][pub][knownType]] = 1
+                                foundPubs[knownType][thisPair[1]+"-"+thisPair[0]+"-"+publications[thisType][pub][knownType]] = 1
                             edgeList[thisPair[0]] = authors[thisPair[0]]
                             edgeList[thisPair[1]] = authors[thisPair[1]]
+                            # add edge meta data
                             if includeEdgeData:
                                 coAuthorshipData.append({
                                                         'type': publications[thisType][pub]['type'],
@@ -147,35 +213,61 @@ with open(pubsFileClean, 'rb') as csvfile:
 
 
         # write header line for output file
-        header = ['Collaborator1', 'Collaborator2']
+        header = ['Source', 'Target']
         if includeEdgeData:
-            header.append('Type')
+            header.append('Weight')
+            header.append('Publication Type')
             header.append('Publication Name')
             header.append('Title')
             header.append('Co-authors')
             header.append('Keywords')
         writer.writerow(header)
 
-        # if more than one compare type is used, duplicate pairings are removed above
+        # if more than one compare type is used, duplicate pairings are removed above (if undesired)
         # loop through each unique pairing and write it to the output file
         for idx, coAuthors in enumerate(coAuthorships):
             # if desired, add edge data to csv output
             if includeEdgeData:
                 coAuthors = list(coAuthors)
+                # calculate weight of edge
+                authCount = len(coAuthorshipData[idx]['coauthors'])
+                if authCount > 1:
+                    coAuthors.append(str(1/float(authCount-1)))
+                else:
+                    coAuthors.append(1)
                 coAuthors.append(coAuthorshipData[idx]['type'])
                 coAuthors.append(coAuthorshipData[idx]['publicationName'])
                 coAuthors.append(coAuthorshipData[idx]['title'])
-                coAuthors.append(", ".join(coAuthorshipData[idx]['coauthors']))
-                coAuthors.append(", ".join(coAuthorshipData[idx]['keywords']))
+                coAuthors.append(', '.join(coAuthorshipData[idx]['coauthors']))
+                coAuthors.append(coAuthorshipData[idx]['keywords'])
             writer.writerow(coAuthors)
 
-        with open("author-nodes.csv", "wb") as f2:
+        departments = []
+
+        with open(filePrefix+"-nodes.csv", "wb") as f2:
             nodeWriter = csv.writer(f2)
             # write header for nodes file
             nodeWriter.writerow(['ID', 'Name', 'Institution', 'Department'])
             # loop through all included nodes
             for key, value in edgeList.iteritems():
                 nodeWriter.writerow([key, value['name'], value['institution'], value['department']])
+                departments.append(value['institution']+":"+value['department'])
 
+        with open(filePrefix+"-keywords.csv", "wb") as f2:
+            nodeWriter = csv.writer(f2)
+            # write header for nodes file
+            nodeWriter.writerow(['Institution', 'Word', 'Count'])
+            # loop through all included nodes
+            for inst, wordList in keyWords.iteritems():
+                for word in collections.Counter(wordList).most_common(250):
+                    nodeWriter.writerow([inst, word[0], word[1]])
 
-print "Edge & node file complete"
+        with open(filePrefix+"-departments.csv", "wb") as f2:
+            nodeWriter = csv.writer(f2)
+            # write header for nodes file
+            nodeWriter.writerow(['Institution', 'Department'])
+            # loop through all included nodes
+            for dept in collections.Counter(departments).most_common():
+                nodeWriter.writerow(dept)
+
+print "Edge, keyword, dept & node file complete"
