@@ -124,12 +124,13 @@ with open(pubsFileClean, 'rb') as csvfile:
                 if(variable in newRecord and len(newRecord[variable])):
                     # if first encounter of this publication, initialise variables
                     if(newRecord[variable] not in publications[variable]):
-                        publications[variable][newRecord[variable]] = {'authorIDs': [], 'coauthors': [], 'keywords': [], 'title': '', 'type': '', 'publicationName': ''}
-                    # record authors, either with or without institution
+                        publications[variable][newRecord[variable]] = {'authorIDs': [], 'authorInsts': [], 'coauthors': [], 'keywords': [], 'title': '', 'type': '', 'publicationName': ''}
+                    # record authors, either with or without
+                    publications[variable][newRecord[variable]]['authorIDs'].append(newRecord['Username'])
                     if crossInstitution and 'Institution' in newRecord:
-                        publications[variable][newRecord[variable]]['authorIDs'].append(newRecord['Institution']+'-'+newRecord['Username'])
+                        publications[variable][newRecord[variable]]['authorInsts'].append(newRecord['Institution'])
                     else:
-                        publications[variable][newRecord[variable]]['authorIDs'].append(newRecord['Username'])
+                        publications[variable][newRecord[variable]]['authorIDs'].append(defaultInstitution)
                     # record the longest list of authors available
                     if(len(re.split(', |; |,|;', newRecord['Authors'])) > len(publications[variable][newRecord[variable]]['coauthors'])):
                         publications[variable][newRecord[variable]]['coauthors'] = re.split(', |; |,|;', newRecord['Authors'])
@@ -167,7 +168,7 @@ with open(pubsFileClean, 'rb') as csvfile:
                 counts['nodes']+=1
 
 ###########################################################################################################
-# At this point, we have a dictionary of publication records indexed by all possible markers
+# At this point, we have a dictionary of publication records indexed by all possible identifying markers
 ###########################################################################################################
 
 
@@ -178,8 +179,7 @@ with open(pubsFileClean, 'rb') as csvfile:
     with open(filePrefix+"-edges.csv", "wb") as f:
         writer = csv.writer(f)
         # create list of all found co-authorship records
-        coAuthorships = []
-        coAuthorshipData = []
+        coAuthorships = {}
         compareType = ['ID']
         edgeDict = {}
         foundPubs = {}
@@ -195,40 +195,38 @@ with open(pubsFileClean, 'rb') as csvfile:
                     # loop through all possible pairings of all identified authors
                     for pairing in combinantorial(publications[thisType][pub]['authorIDs']):
                         coAuthorshipIncluded = 0
-                        thisPair = pairing
+                        # ensure all possible pairings of two individuals are considered in the same way (alphabetical)
+                        pairing = sorted(pairing)
+                        # create index-friendly tuple of pairing
+                        thisPair = tuple(sorted(pairing))
                         # check if pairing is already accounted for with this publication
-                        checkString = pairing[0]+"-"+pairing[1]+"-"+pub
-                        if undirectedGraph and thisType in foundPubs and checkString in foundPubs[thisType]:
+                        if publications[thisType][pub][thisType] in coAuthorships[thisPair]
                             print "record already found: "+pub
                             break
-                        # flag to set authors as cross institution or not
-                        authorsCrossInstitution = 0
                         # if within one institution, consider each pairing a collaboration
                         if not crossInstitution:
-                            coAuthorships.append(pairing)
-                            counts['edges']+=1
                             coAuthorshipIncluded = 1
                         else:
+                            # flag to set authors as cross institution or not
+                            authorsCrossInstitution = 0
                             # if only interested in cross institution edges, ensure both institutions are represented
-                            insts = [pairing[0].split('-')[0], pairing[1].split('-')[0]]
-                            # TODO: remove hard coded institution references
-                            if ('Oxford' in insts and 'Cambridge' in insts):
+                            insts = [publications[thisType][pub]['authorInsts'][publications[thisType][pub]['authorIDs'].index(pairing[0])], publications[thisType][pub]['authorInsts'][publications[thisType][pub]['authorIDs'].index(pairing[1])]]
+                            if insts[0] is not insts[1]:
                                 authorsCrossInstitution = 1
                             if(not crossInstitutionOnly or authorsCrossInstitution):
-                                thisPair = [pairing[0].split('-')[1], pairing[1].split('-')[1]]
                                 if authorsCrossInstitution:
-                                    authors[thisPair[0]]['cross-institution'] = 1
-                                    authors[thisPair[1]]['cross-institution'] = 1
+                                    authors[paring[0]]['cross-institution'] = 1
+                                    authors[pairing[1]]['cross-institution'] = 1
                                 else:
-                                    if authors[thisPair[0]]['cross-institution'] == -1:
-                                        authors[thisPair[0]]['cross-institution'] = 0
-                                    if authors[thisPair[1]]['cross-institution'] == -1:
-                                        authors[thisPair[1]]['cross-institution'] = 0
-                                coAuthorships.append(thisPair)
-                                counts['edges']+=1
+                                    if authors[pairing[0]]['cross-institution'] == -1:
+                                        authors[pairing[0]]['cross-institution'] = 0
+                                    if authors[pairing[1]]['cross-institution'] == -1:
+                                        authors[pairing[1]]['cross-institution'] = 0
                                 coAuthorshipIncluded = 1
                         # if found, add edge data for selected coAuthorship
                         if coAuthorshipIncluded:
+                            counts['edges']+=1
+                            
                             # add co-authorship to list of known pub pairings
                             for knownType in compareType:
                                 if knownType not in foundPubs:
