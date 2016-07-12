@@ -1,251 +1,251 @@
 Institution,Word,Count
-Oxford,Humans,10878
-Oxford,Female,4183
-Oxford,Male,4047
-Oxford,Animals,4010
-Oxford,Middle Aged,2488
-Oxford,Mice,2064
-Oxford,Aged,2062
-Oxford,Adult,2002
-Oxford,Models,1748
-Oxford,Cell Line,1263
-Oxford,Molecular,1017
-Oxford,Genetic,1011
-Oxford,Gene Expression Regulation,1006
-Oxford,Mutation,961
-Oxford,Risk Factors,929
+Oxford,Humans,10989
+Oxford,Female,4248
+Oxford,Male,4109
+Oxford,Animals,4049
+Oxford,Middle Aged,2511
+Oxford,Aged,2085
+Oxford,Mice,2062
+Oxford,Adult,2055
+Oxford,Models,1769
+Oxford,Cell Line,1278
+Oxford,Genetic,1000
+Oxford,Molecular,997
+Oxford,Gene Expression Regulation,990
+Oxford,Mutation,945
+Oxford,Risk Factors,935
 Oxford,Tumor,907
-Oxford,Polymorphism,847
-Oxford,Magnetic Resonance Imaging,822
-Oxford,Signal Transduction,789
-Oxford,80 and over,789
-Oxford,Neoplasms,786
-Oxford,Receptors,774
-Oxford,Prospective Studies,763
-Oxford,Single Nucleotide,751
-Oxford,Young Adult,714
-Oxford,Molecular Sequence Data,689
-Oxford,RNA,683
-Oxford,Case-Control Studies,640
-Oxford,DNA,636
-Oxford,Protein Binding,631
-Oxford,Treatment Outcome,603
-Oxford,Cultured,589
-Oxford,Genetic Predisposition to Disease,583
-Oxford,Protein Structure,582
-Oxford,Great Britain,575
-Oxford,Cohort Studies,574
-Oxford,Prognosis,569
-Oxford,Reproducibility of Results,546
-Oxford,Inbred C57BL,543
-Oxford,Human,537
-Oxford,Computer-Assisted,530
-Oxford,Cells,528
-Oxford,Biological,515
-Oxford,Biomarkers,510
-Oxford,Time Factors,510
-Oxford,Antigens,502
-Oxford,Genome-Wide Association Study,487
-Oxford,Amino Acid Sequence,486
-Oxford,Tertiary,478
-Oxford,Adolescent,447
-Oxford,Cell Proliferation,445
-Oxford,Breast Neoplasms,426
-Oxford,Phenotype,422
-Oxford,Animal,421
-Oxford,Neoplastic,417
-Oxford,Randomized Controlled Trials as Topic,416
-Oxford,Crystallography,409
-Oxford,Research Design,407
+Oxford,Neoplasms,830
+Oxford,Polymorphism,821
+Oxford,Magnetic Resonance Imaging,819
+Oxford,80 and over,819
+Oxford,Signal Transduction,793
+Oxford,Receptors,772
+Oxford,Young Adult,725
+Oxford,Single Nucleotide,724
+Oxford,Prospective Studies,715
+Oxford,Molecular Sequence Data,684
+Oxford,RNA,651
+Oxford,DNA,648
+Oxford,Treatment Outcome,630
+Oxford,Case-Control Studies,625
+Oxford,Protein Binding,615
+Oxford,Great Britain,605
+Oxford,Reproducibility of Results,594
+Oxford,Genetic Predisposition to Disease,589
+Oxford,Prognosis,587
+Oxford,Cultured,579
+Oxford,Protein Structure,574
+Oxford,Cohort Studies,561
+Oxford,Computer-Assisted,560
+Oxford,Inbred C57BL,541
+Oxford,Biomarkers,531
+Oxford,Cells,529
+Oxford,Time Factors,523
+Oxford,Antigens,522
+Oxford,Human,515
+Oxford,Adolescent,511
+Oxford,Biological,509
+Oxford,Amino Acid Sequence,479
+Oxford,Genome-Wide Association Study,473
+Oxford,Tertiary,466
+Oxford,Cell Proliferation,441
+Oxford,Phenotype,432
+Oxford,Child,432
+Oxford,Randomized Controlled Trials as Topic,431
+Oxford,Research Design,424
+Oxford,Animal,419
+Oxford,Breast Neoplasms,417
+Oxford,Neoplastic,416
 Oxford,Brain,406
-Oxford,Microscopy,405
-Oxford,X-Ray,398
-Oxford,Genome,390
-Oxford,Genotype,389
-Oxford,Prostatic Neoplasms,385
-Oxford,Follow-Up Studies,382
-Oxford,Child,381
-Oxford,Colorectal Neoplasms,379
-Oxford,Chromosomes,373
-Oxford,Cell Differentiation,371
-Oxford,Algorithms,353
-Oxford,Disease Models,351
-Oxford,Antineoplastic Agents,351
-Oxford,T-Lymphocytes,349
-Oxford,Knockout,348
-Oxford,Predictive Value of Tests,344
-Oxford,Sequence Analysis,338
-Oxford,Alleles,332
-Oxford,Risk Assessment,331
-Oxford,Binding Sites,330
-Oxford,Carcinoma,328
-Oxford,Antibodies,320
-Oxford,Protein Conformation,312
-Oxford,Base Sequence,312
+Oxford,Microscopy,402
+Oxford,Crystallography,400
+Oxford,Genotype,392
+Oxford,Prostatic Neoplasms,392
+Oxford,X-Ray,390
+Oxford,Follow-Up Studies,379
+Oxford,Genome,369
+Oxford,Colorectal Neoplasms,366
+Oxford,Algorithms,363
+Oxford,Chromosomes,361
+Oxford,Cell Differentiation,358
+Oxford,Predictive Value of Tests,347
+Oxford,Antineoplastic Agents,347
+Oxford,Disease Models,345
+Oxford,Sequence Analysis,340
+Oxford,T-Lymphocytes,338
+Oxford,Knockout,336
+Oxford,Base Sequence,336
+Oxford,Carcinoma,334
+Oxford,Alleles,324
+Oxford,Antibodies,322
+Oxford,Binding Sites,317
+Oxford,Protein Conformation,314
+Oxford,Risk Assessment,312
 Oxford,Sensitivity and Specificity,307
-Oxford,Phosphorylation,304
-Oxford,Stroke,304
-Oxford,DNA-Binding Proteins,299
-Oxford,Myocardium,291
-Oxford,Messenger,282
-Oxford,Transcription Factors,281
-Oxford,Fluorescence,281
-Oxford,Incidence,278
-Oxford,Molecular Structure,275
-Oxford,Gene Expression Profiling,275
-Oxford,Transcription,269
-Oxford,Nuclear Proteins,268
-Oxford,Genes,266
-Oxford,Retrospective Studies,264
-Oxford,Membrane Proteins,263
-Oxford,Apoptosis,261
-Oxford,England,258
-Oxford,Infant,258
-Oxford,Rats,257
-Oxford,Body Mass Index,253
-Oxford,Statistical,250
-Oxford,Immunohistochemistry,248
-Oxford,Inflammation,247
-Oxford,Transgenic,245
-Oxford,Severity of Illness Index,244
-Oxford,DNA Damage,241
-Oxford,Europe,237
-Oxford,HEK293 Cells,236
-Oxford,Genetic Variation,236
-Oxford,Disease Progression,231
-Oxford,Magnetic Resonance Spectroscopy,227
-Oxford,Surveys and Questionnaires,226
-Oxford,Preschool,225
-Oxford,Blotting,225
-Oxford,DNA Repair,224
-Oxford,Flow Cytometry,224
-Oxford,RNA Interference,223
-Oxford,Protein-Serine-Threonine Kinases,222
-Oxford,Western,221
+Oxford,Phosphorylation,306
+Oxford,Stroke,306
+Oxford,DNA-Binding Proteins,304
+Oxford,Retrospective Studies,295
+Oxford,Fluorescence,289
+Oxford,Infant,286
+Oxford,Myocardium,284
+Oxford,Incidence,283
+Oxford,Transcription Factors,280
+Oxford,Membrane Proteins,274
+Oxford,Molecular Structure,274
+Oxford,Messenger,273
+Oxford,Nuclear Proteins,273
+Oxford,Gene Expression Profiling,271
+Oxford,England,269
+Oxford,Disease Progression,264
+Oxford,Statistical,262
+Oxford,Transcription,261
+Oxford,Rats,261
+Oxford,Immunohistochemistry,260
+Oxford,Surveys and Questionnaires,259
+Oxford,Genes,259
+Oxford,Apoptosis,257
+Oxford,DNA Damage,253
+Oxford,Severity of Illness Index,252
+Oxford,Preschool,252
+Oxford,HEK293 Cells,250
+Oxford,Transgenic,249
+Oxford,Body Mass Index,245
+Oxford,Inflammation,235
+Oxford,Genetic Variation,234
+Oxford,DNA Repair,231
+Oxford,Computer Simulation,230
+Oxford,Magnetic Resonance Spectroscopy,229
 Oxford,Cell Survival,221
-Oxford,Computer Simulation,221
+Oxford,Flow Cytometry,219
+Oxford,Image Processing,219
+Oxford,Cell Cycle Proteins,218
+Oxford,Protein-Serine-Threonine Kinases,218
+Oxford,Blotting,218
+Oxford,Clinical Trials as Topic,217
 Oxford,MicroRNAs,217
-Oxford,Histones,216
-Oxford,Image Processing,214
-Oxford,Monoclonal,213
-Oxford,HeLa Cells,208
-Oxford,Promoter Regions,208
-Oxford,Neoplasm,208
-Oxford,Cardiovascular Diseases,207
-Oxford,Clinical Trials as Topic,207
-Oxford,Kinetics,207
+Oxford,RNA Interference,215
+Oxford,Western,214
+Oxford,Histones,214
+Oxford,Kinetics,214
+Oxford,Newborn,213
+Oxford,HeLa Cells,212
+Oxford,Radiotherapy,210
+Oxford,Europe,208
+Oxford,Monoclonal,208
+Oxford,Cross-Sectional Studies,208
+Oxford,Cardiovascular Diseases,208
+Oxford,Leukemia,207
 Oxford,Tomography,206
-Oxford,Evolution,205
-Oxford,Leukemia,202
-Oxford,Databases,201
 Oxford,Neovascularization,201
-Oxford,Cross-Sectional Studies,201
-Oxford,Cell Cycle Proteins,200
-Oxford,Structure-Activity Relationship,199
-Oxford,Gene Frequency,195
-Oxford,Genetic Loci,194
-Oxford,Radiotherapy,192
-Oxford,European Continental Ancestry Group,191
-Oxford,Newborn,191
-Oxford,Developmental,190
-Oxford,Receptor,188
-Oxford,Cell Hypoxia,188
-Oxford,Immunity,188
-Oxford,Catalysis,188
-Oxford,Imaging,186
-Oxford,CD8-Positive T-Lymphocytes,185
-Oxford,Hypoxia-Inducible Factor 1,184
-Oxford,Substrate Specificity,182
-Oxford,Oligonucleotide Array Sequence Analysis,179
+Oxford,Neoplasm,201
+Oxford,Databases,200
+Oxford,Promoter Regions,200
+Oxford,Receptor,196
+Oxford,Evolution,196
+Oxford,Structure-Activity Relationship,194
+Oxford,Catalysis,192
+Oxford,CD8-Positive T-Lymphocytes,189
+Oxford,Gene Frequency,185
+Oxford,Developmental,184
+Oxford,Oxidation-Reduction,182
+Oxford,Genetic Loci,180
+Oxford,European Continental Ancestry Group,180
+Oxford,Pregnancy,179
+Oxford,Imaging,178
+Oxford,Oligonucleotide Array Sequence Analysis,178
+Oxford,Cell Hypoxia,178
+Oxford,Immunity,177
+Oxford,Peptides,176
+Oxford,Hypoxia-Inducible Factor 1,176
+Oxford,Recombinant Proteins,176
 Oxford,Cell Movement,176
-Oxford,Pregnancy,175
-Oxford,Diabetes Mellitus,174
-Oxford,Secondary,173
-Oxford,Proteins,172
-Oxford,Cytokines,172
-Oxford,Phylogeny,172
-Oxford,Peptides,171
-Oxford,Oxygen,170
-Oxford,DNA Mutational Analysis,170
-Oxford,HIV Infections,169
-Oxford,Small Interfering,169
-Oxford,Recombinant Proteins,169
-Oxford,Stereoisomerism,169
-Oxford,Proportional Hazards Models,167
-Oxford,Lymphocyte Activation,167
-Oxford,Antineoplastic Combined Chemotherapy Protocols,166
+Oxford,DNA Mutational Analysis,175
+Oxford,Substrate Specificity,174
+Oxford,Oxygen,173
+Oxford,Age Factors,172
+Oxford,Dose-Response Relationship,171
+Oxford,Bacterial,171
+Oxford,Diabetes Mellitus,171
+Oxford,Odds Ratio,170
+Oxford,Secondary,170
+Oxford,Obesity,170
+Oxford,Proteins,168
+Oxford,Small Interfering,167
+Oxford,Cytokines,166
+Oxford,Gene Expression,166
 Oxford,Catalytic Domain,165
-Oxford,Obesity,165
-Oxford,Pathologic,164
-Oxford,Odds Ratio,164
-Oxford,Gene Expression,164
-Oxford,Enzyme Inhibitors,164
-Oxford,Bacterial,162
-Oxford,Blood Pressure,162
-Oxford,Repressor Proteins,161
-Oxford,Chromatin,161
-Oxford,Sequence Alignment,160
-Oxford,Contrast Media,159
-Oxford,Protein Kinase Inhibitors,159
-Oxford,Type 2,158
-Oxford,Chronic,157
-Oxford,Risk,155
+Oxford,HIV Infections,164
+Oxford,Stereoisomerism,164
+Oxford,Contrast Media,162
+Oxford,Pathologic,161
+Oxford,Enzyme Inhibitors,161
+Oxford,Phylogeny,161
+Oxford,Blood Pressure,161
+Oxford,Multivariate Analysis,160
+Oxford,Chromatin,160
+Oxford,Ligands,160
+Oxford,Lymphocyte Activation,160
+Oxford,Sequence Alignment,159
+Oxford,Antineoplastic Combined Chemotherapy Protocols,159
+Oxford,Chromatography,158
+Oxford,Repressor Proteins,157
+Oxford,Escherichia coli,156
+Oxford,Sex Factors,156
 Oxford,Cell Membrane,155
-Oxford,Age Factors,155
-Oxford,Proto-Oncogene Proteins,154
-Oxford,Prevalence,154
-Oxford,Myocardial Infarction,152
+Oxford,Proportional Hazards Models,155
+Oxford,Prevalence,155
+Oxford,Practice Guidelines as Topic,154
+Oxford,Risk,153
+Oxford,Myocardial Infarction,153
+Oxford,Chronic,152
 Oxford,Inbred BALB C,152
-Oxford,Diet,150
-Oxford,Heart,150
-Oxford,Dose-Response Relationship,149
-Oxford,Tumor Suppressor Protein p53,149
-Oxford,Escherichia coli,148
-Oxford,Oxidation-Reduction,148
-Oxford,T-Cell,148
-Oxford,Ligands,147
-Oxford,CD4-Positive T-Lymphocytes,147
-Oxford,Coronary Artery Disease,146
-Oxford,Chromosome Mapping,146
+Oxford,Type 2,149
+Oxford,Checklist,149
+Oxford,X-Ray Computed,149
+Oxford,DNA Breaks,148
+Oxford,Publishing,148
+Oxford,Guidelines as Topic,148
+Oxford,Protein Kinase Inhibitors,146
 Oxford,Neoplasm Staging,146
-Oxford,X-Ray Computed,145
-Oxford,Disease-Free Survival,144
-Oxford,Practice Guidelines as Topic,143
-Oxford,Guidelines as Topic,143
-Oxford,Publishing,142
-Oxford,Chromatography,142
-Oxford,Brain Mapping,142
-Oxford,Antigen,141
-Oxford,Sex Factors,141
-Oxford,Macrophages,140
-Oxford,Multivariate Analysis,138
-Oxford,Hepatitis C,138
-Oxford,Image Interpretation,138
-Oxford,Cine,137
-Oxford,Experimental,136
-Oxford,Checklist,136
-Oxford,Data Interpretation,136
-Oxford,Cholesterol,135
-Oxford,Real-Time Polymerase Chain Reaction,134
-Oxford,HIV-1,134
-Oxford,Image Enhancement,133
-Oxford,Intracellular Signaling Peptides and Proteins,132
-Oxford,DNA Replication,132
-Oxford,Protein Processing,131
-Oxford,alpha Subunit,131
-Oxford,Post-Translational,131
+Oxford,Data Interpretation,145
+Oxford,Chromosome Mapping,145
+Oxford,Tumor Suppressor Protein p53,145
+Oxford,Image Interpretation,145
+Oxford,Heart,145
+Oxford,CD4-Positive T-Lymphocytes,144
+Oxford,Double-Stranded,141
+Oxford,China,141
+Oxford,Brain Mapping,141
+Oxford,DNA Replication,140
+Oxford,Coronary Artery Disease,138
+Oxford,Proto-Oncogene Proteins,138
+Oxford,T-Cell,138
+Oxford,Kaplan-Meier Estimate,137
+Oxford,Image Enhancement,136
+Oxford,Mass Spectrometry,136
+Oxford,Diet,135
+Oxford,HIV-1,135
+Oxford,Antigen,134
+Oxford,Macrophages,134
+Oxford,Cine,134
+Oxford,Disease-Free Survival,134
+Oxford,Experimental,133
+Oxford,Intracellular Signaling Peptides and Proteins,133
+Oxford,Biomedical Research,133
+Oxford,Exons,133
+Oxford,Reverse Transcriptase Polymerase Chain Reaction,132
+Oxford,Analysis of Variance,132
+Oxford,Viral,130
+Oxford,Real-Time Polymerase Chain Reaction,130
+Oxford,Transfection,130
+Oxford,Lung Neoplasms,130
 Oxford,Prostatectomy,130
-Oxford,Analysis of Variance,130
-Oxford,DNA Methylation,130
-Oxford,China,130
-Oxford,Reverse Transcriptase Polymerase Chain Reaction,128
-Oxford,Kaplan-Meier Estimate,128
-Oxford,Carrier Proteins,128
-Oxford,Hematopoietic Stem Cells,128
-Oxford,Cell Transformation,127
-Oxford,Drug Resistance,126
-Oxford,Exons,126
-Oxford,Energy Metabolism,125
-Oxford,Lung Neoplasms,125
-Oxford,Dendritic Cells,125
-Oxford,DNA Breaks,125
+Oxford,Bacterial Proteins,130
+Oxford,Hepatitis C,130
+Oxford,Cell Transformation,130
+Oxford,Cholesterol,129
+Oxford,DNA Methylation,129
+Oxford,Anoxia,129
+Oxford,Cell Cycle,128

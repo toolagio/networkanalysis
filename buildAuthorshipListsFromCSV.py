@@ -8,6 +8,8 @@ from io import BytesIO
 
 
 
+
+'''
 # 1. inter-institutional... Oxford and Cambridge
 #filenames
 pubsFile = 'Publications_oxford-cambridge-CRUK_2011-03_2016.txt'
@@ -26,8 +28,8 @@ filePrefix = "ox-cam"
 '''
 # 2. Oxford only
 #filenames
-pubsFile = 'Publications_Simple_From20110101_To20160331_CancerCentre_20160317.txt'
-pubsFileClean = 'Publications_Simple_From20110101_To20160331_CancerCentre_20160317-clean.txt'
+pubsFile = 'Publications_Simple_From20110101_To20160711_CancerCentre_20160711.csv'
+pubsFileClean = 'Publications_Simple_From20110101_To20160711_CancerCentre_20160711-clean.csv'
 # organise outputs by institution and include institution in outputs
 crossInstitution = 0
 # only show inter-institutional collaborations/coAuthorships
@@ -41,6 +43,8 @@ filePrefix = "ox-ox"
 
 
 
+
+'''
 # 3. Cambridge only
 #filenames
 pubsFile = 'Publications_cambridge-CRUK_2011-03_2016.txt'
@@ -73,9 +77,9 @@ def combinantorial(lst):
     return pairs
 
 with open(pubsFile,"rU") as infile, open(pubsFileClean,"wb") as outfile:
-    #c = infile.read()
-    c = infile.read().decode('utf-16le').encode('utf-8')
-    reader = csv.reader((line.replace('\0','') for line in BytesIO(c)), delimiter='	', quotechar='"')
+    c = infile.read()
+    #c = infile.read().decode('utf-16le').encode('utf-8')
+    reader = csv.reader((line.replace('\0','') for line in BytesIO(c)), delimiter=',', quotechar='"')
     writer = csv.writer(outfile)
     for line in reader:
         writer.writerow([remove_quotes(elem) for elem in line])
@@ -130,7 +134,7 @@ with open(pubsFileClean, 'rb') as csvfile:
                     if crossInstitution and 'Institution' in newRecord:
                         publications[variable][newRecord[variable]]['authorInsts'].append(newRecord['Institution'])
                     else:
-                        publications[variable][newRecord[variable]]['authorIDs'].append(defaultInstitution)
+                        publications[variable][newRecord[variable]]['authorInsts'].append(defaultInstitution)
                     # record the longest list of authors available
                     if(len(re.split(', |; |,|;', newRecord['Authors'])) > len(publications[variable][newRecord[variable]]['coauthors'])):
                         publications[variable][newRecord[variable]]['coauthors'] = re.split(', |; |,|;', newRecord['Authors'])
@@ -173,7 +177,7 @@ with open(pubsFileClean, 'rb') as csvfile:
 
 
     # initiate graph
-    authG = nx.MultiGraph()
+    authG = nx.Graph()
 
     # open output csv file
     with open(filePrefix+"-edges.csv", "wb") as f:
@@ -181,7 +185,7 @@ with open(pubsFileClean, 'rb') as csvfile:
         # create list of all found co-authorship records
         coAuthorships = {}
         compareType = ['ID']
-        edgeDict = {}
+        includedAuthors = {}
         foundPubs = {}
         # if cross-institution, compare external IDs to determine links
         if crossInstitution:
@@ -200,7 +204,7 @@ with open(pubsFileClean, 'rb') as csvfile:
                         # create index-friendly tuple of pairing
                         thisPair = tuple(sorted(pairing))
                         # check if pairing is already accounted for with this publication
-                        if publications[thisType][pub][thisType] in coAuthorships[thisPair]
+                        if thisPair in coAuthorships and publications[thisType][pub][thisType] in coAuthorships[thisPair]:
                             print "record already found: "+pub
                             break
                         # if within one institution, consider each pairing a collaboration
@@ -215,7 +219,7 @@ with open(pubsFileClean, 'rb') as csvfile:
                                 authorsCrossInstitution = 1
                             if(not crossInstitutionOnly or authorsCrossInstitution):
                                 if authorsCrossInstitution:
-                                    authors[paring[0]]['cross-institution'] = 1
+                                    authors[pairing[0]]['cross-institution'] = 1
                                     authors[pairing[1]]['cross-institution'] = 1
                                 else:
                                     if authors[pairing[0]]['cross-institution'] == -1:
@@ -225,16 +229,15 @@ with open(pubsFileClean, 'rb') as csvfile:
                                 coAuthorshipIncluded = 1
                         # if found, add edge data for selected coAuthorship
                         if coAuthorshipIncluded:
-                            counts['edges']+=1
-                            
-                            # add co-authorship to list of known pub pairings
+                            # if not already present, create record for co-authorship
+                            if thisPair not in coAuthorships:
+                                coAuthorships[thisPair] = {}
+                                counts['edges']+=1
+                            # add a marker for each publication identifier for this collaboration
                             for knownType in compareType:
-                                if knownType not in foundPubs:
-                                    foundPubs[knownType] = {}
-                                foundPubs[knownType][pairing[0]+"-"+pairing[1]+"-"+publications[thisType][pub][knownType]] = 1
-                                foundPubs[knownType][pairing[1]+"-"+pairing[0]+"-"+publications[thisType][pub][knownType]] = 1
-                            edgeDict[thisPair[0]] = authors[thisPair[0]]
-                            edgeDict[thisPair[1]] = authors[thisPair[1]]
+                                coAuthorships[thisPair][publications[thisType][pub][knownType]] = {'duplicate': 1, 'weight': 0}
+                            includedAuthors[pairing[0]] = authors[pairing[0]]
+                            includedAuthors[pairing[1]] = authors[pairing[1]]
                             # calculate weight of edge
                             authCount = len(publications[thisType][pub]['coauthors'])
                             if authCount > 1:
@@ -242,19 +245,9 @@ with open(pubsFileClean, 'rb') as csvfile:
                             else:
                                 calcWeight = 1
 
-                            # add weighted pairing to network graph
-                            if thisPair[0] not in authG:
-                                authG.add_node(thisPair[0])
-                                counts['nodesgraph']+=1
-                            if thisPair[1] not in authG:
-                                authG.add_node(thisPair[1])
-                                counts['nodesgraph']+=1
-                            authG.add_edge(thisPair[0], thisPair[1], weight=calcWeight)
-                            counts['edgesgraph']+=1
-
-                            # add edge meta data
-                            if includeEdgeData:
-                                coAuthorshipData.append({
+                            # add edge data
+                            coAuthorships[thisPair][publications[thisType][pub][thisType]] = {
+                                                        'duplicate': 0,
                                                         'weight': calcWeight,
                                                         'type': publications[thisType][pub]['type'],
                                                         'title': publications[thisType][pub]['title'],
@@ -262,7 +255,20 @@ with open(pubsFileClean, 'rb') as csvfile:
                                                         'publicationDate': publications[thisType][pub]['publicationDate'],
                                                         'coauthors': publications[thisType][pub]['coauthors'],
                                                         'keywords': publications[thisType][pub]['keywords']
-                                                    })
+                                                    }
+
+                            # add weighted pairing to network graph
+                            if pairing[0] not in authG:
+                                authG.add_node(pairing[0])
+                                counts['nodesgraph']+=1
+                            if pairing[1] not in authG:
+                                authG.add_node(pairing[1])
+                                counts['nodesgraph']+=1
+                            if not authG.has_edge(pairing[0], pairing[1]):
+                                authG.add_edge(pairing[0], pairing[1], weight=calcWeight)
+                                counts['edgesgraph']+=1
+                            else:
+                                authG[pairing[0]][pairing[1]]['weight'] += calcWeight
 
 ###########################################################################################################
 # At this point, we have two lists representing coauthorship links (coAuthorships) and corresponding publication data (coAuthorshipData)
@@ -271,6 +277,7 @@ with open(pubsFileClean, 'rb') as csvfile:
         # write header line for output file
         header = ['Source', 'Target']
         if includeEdgeData:
+            header.append('Collaborations')
             header.append('Weight')
             header.append('Publication Type')
             header.append('Publication Name')
@@ -282,18 +289,33 @@ with open(pubsFileClean, 'rb') as csvfile:
 
         # if more than one compare type is used, duplicate pairings are removed above (if undesired)
         # loop through each unique pairing and write it to the output file
-        for idx, coAuthors in enumerate(coAuthorships):
+        for coAuthors in coAuthorships:
+            collabRow = list(coAuthors)
             # if desired, add edge data to csv output
             if includeEdgeData:
-                coAuthors = list(coAuthors)
-                coAuthors.append(coAuthorshipData[idx]['weight'])
-                coAuthors.append(coAuthorshipData[idx]['type'])
-                coAuthors.append(coAuthorshipData[idx]['publicationName'])
-                coAuthors.append(coAuthorshipData[idx]['publicationDate'])
-                coAuthors.append(coAuthorshipData[idx]['title'])
-                coAuthors.append(', '.join(coAuthorshipData[idx]['coauthors']))
-                coAuthors.append(coAuthorshipData[idx]['keywords'])
-            writer.writerow(coAuthors)
+                currentCollabs = collections.OrderedDict([('weight', []), ('type', []), ('publicationName', []), ('publicationDate', []), ('title', []), ('coauthors', []), ('keywords', [])])
+                for key in coAuthorships[coAuthors]:
+                    if coAuthorships[coAuthors][key]['duplicate'] == 0 and coAuthorships[coAuthors][key]['weight'] > 0:
+                        for var in currentCollabs:
+                            if isinstance(coAuthorships[coAuthors][key][var], list):
+                                currentCollabs[var].append(",".join(coAuthorships[coAuthors][key][var]))
+                            else:
+                                currentCollabs[var].append(coAuthorships[coAuthors][key][var])
+                # add count as number of collaborations
+                collabRow.append(len(currentCollabs['weight']))
+                # add remaining compiled columns as a list of all values for each column
+                for var in currentCollabs:
+                    if isinstance(currentCollabs[var][0], int) or isinstance(currentCollabs[var][0], float):
+                        if var is 'weight':
+                            totalWeight = 0.0
+                            for value in currentCollabs[var]:
+                                totalWeight += float(value)
+                            collabRow.append(totalWeight)
+                        else:
+                            collabRow.append('|'.join(map(str, currentCollabs[var])))
+                    else:
+                        collabRow.append(u'|'.join(currentCollabs[var]))
+            writer.writerow(collabRow)
 
         # run centrality metrics on compiled graph
         closeness = nx.closeness_centrality(authG)
@@ -307,7 +329,7 @@ with open(pubsFileClean, 'rb') as csvfile:
             # write header for nodes file
             nodeWriter.writerow(['ID', 'Name', 'Institution', 'Cross-institution', 'Department', 'Degree', 'Closeness', 'Betweenness', 'Pagerank'])
             # loop through all included nodes
-            for key, value in edgeDict.iteritems():
+            for key, value in includedAuthors.iteritems():
                 nodeWriter.writerow([key, value['name'], value['institution'], value['cross-institution'], value['department'], authG.degree(key), closeness[key], betweenness[key], pagerank[key]])
                 departments.append(value['institution']+":"+value['department'])
 
