@@ -330,7 +330,7 @@ with open(pubsFileClean, 'rb') as csvfile:
             nodeWriter.writerow(['ID', 'Name', 'Institution', 'Cross-institution', 'Department', 'Degree', 'Closeness', 'Betweenness', 'Pagerank'])
             # loop through all included nodes
             for key, value in includedAuthors.iteritems():
-                nodeWriter.writerow([key, value['name'], value['institution'], value['cross-institution'], value['department'], authG.degree(key), closeness[key], betweenness[key], pagerank[key]])
+                nodeWriter.writerow([key, value['name'].title(), value['institution'], value['cross-institution'], value['department'], authG.degree(key), closeness[key], betweenness[key], pagerank[key]])
                 departments.append(value['institution']+":"+value['department'])
 
         with open(filePrefix+"-keywords.csv", "wb") as f2:
